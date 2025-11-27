@@ -157,7 +157,17 @@ const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
 // Crear una función que sume dos números
 
+const sum =  (a,b) => a + b;
+const div = (a,b) => a/b;
+
+
 
 console.log(`Realizando una resta: ${calculate(5, 3, subtract)}`); // 2
 console.log(`Realizando una multiplicación: ${calculate(5, 3, multiply )}`); // 15
+console.log(`Realizando una suma : ${calculate(5, 3, sum)} `); //8
+console.log (`Realizando una división: ${calculate(5, 3, div)}`); //
+
+
 // Aplicar a la función calculate la función suma
+
+
