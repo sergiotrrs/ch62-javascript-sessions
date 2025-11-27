@@ -191,6 +191,29 @@ console.log( Boolean(" ") ); // true
 console.log( Boolean("1") ); // true
 console.log( Boolean("0") ); // true
 
+
+// Conversión explicita a String
+console.log( String( 123 ) ); // "123"
+console.log( String( 12.34 ) ); // "12.34"
+console.log( "Mi número es " + 12.34 ); // "Mi número es 12.34"
+console.log( "Mi número es " + String(12.34) ); // "Mi número es 12.34"
+console.log( String( true ) ); // "true"
+console.log( String( null ) ); // "null"
+console.log( String( undefined ) ); // "undefined"
+console.log( String( [] ) ); // empty string-> ""
+console.log( String( [2,3,4,5,null,3] ) ); // "2,3,4,5,,3"
+console.log( String( {} ) ); // [object Object]
+console.log( String( {name:"Serch", active:true} ) ); // [object Object]
+
+// Para lo objetos se recomienda usar el métod JSON.stringyfy( object )
+// convierte un objeto en formato JSON
+console.log( JSON.stringify( {name:"Serch", active:true} ) ); // {"name":"Serch","active":true}
+
+const calificaciones = [8,6,5,9];
+console.log("Mi calificación es " + calificaciones); // "Mi calificación es 8,6,5,9"
+
+
+
 // Resumen:
 
 // Number()
