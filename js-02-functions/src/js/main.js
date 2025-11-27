@@ -113,3 +113,51 @@ console.log( makeCoffe() ); // Preparando un café Americano
 
 // TODO: generar una función que calcule el área de un rectángulo
 // usando parámetros por defecto para largo y ancho.
+
+// Ejemplo de uso de default parameters
+console.log(`Vales 1000, estoy diciendo que vales: ${parseInt("1000")}`); // 1000
+console.log(`Vales 1000 base 2, estoy diciendo que vales: ${parseInt("1000", 2)}`); // 8
+
+
+/*
+Pase de datos:
+- Por valor: Se crea una copia independiente del dato. 
+Si modificas la copia, el original NO cambia.
+- Por referencia: Se pasa la dirección de memoria (referencia), 
+no el dato en sí. Si modificas algo a través de esa referencia, el original SÍ cambia.
+ */
+
+/*
+ ------------ Funciones de Callback -----------------------
+ Es una función(definida, expresada, arrow, anónima) que se pasa 
+ a otra función como argumento.
+ Se pasa en el argumento como referencia ( sin parentesis).
+ */
+
+ // Mal diseño: Cada vez que quieras una operación nueva, modificas esta función.
+const calculateBad = (a, b, type) => {
+    if (type === "sum") return a + b;
+    if (type === "subtract") return a - b;
+    // Si quiero dividir, tengo que editar este archivo y agregar otro if...
+};
+
+console.log( calculateBad(5, 3, "sum") ); // 8
+console.log( calculateBad(5, 3, "subtract") ); // 2
+
+// Aplicando funciones de callback
+// 1. La función principal está "Cerrada" (no la tocamos más)
+const calculate = (a, b, operationFunction) => {
+    return operationFunction(a, b);
+};
+
+// console.log(`Usando incorrectamente la función: ${calculate( 5, 3, "sum")}`); // operationFunction is not a function
+
+// 2. Definimos operaciones básicas
+const subtract = (a, b) => a - b;
+const multiply = (a, b) => a * b;
+// Crear una función que sume dos números
+
+
+console.log(`Realizando una resta: ${calculate(5, 3, subtract)}`); // 2
+console.log(`Realizando una multiplicación: ${calculate(5, 3, multiply )}`); // 15
+// Aplicar a la función calculate la función suma
