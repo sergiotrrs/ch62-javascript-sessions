@@ -150,6 +150,8 @@ const calculate = (a, b, operationFunction) => {
     return operationFunction(a, b);
 };
 
+/* Primero definimos la funcion como variable -const #Nombredelafuncion 
+*/
 // console.log(`Usando incorrectamente la función: ${calculate( 5, 3, "sum")}`); // operationFunction is not a function
 
 // 2. Definimos operaciones básicas
@@ -165,9 +167,11 @@ const div = (a,b) => a/b;
 console.log(`Realizando una resta: ${calculate(5, 3, subtract)}`); // 2
 console.log(`Realizando una multiplicación: ${calculate(5, 3, multiply )}`); // 15
 console.log(`Realizando una suma : ${calculate(5, 3, sum)} `); //8
-console.log (`Realizando una división: ${calculate(5, 3, div)}`); //
+console.log (`Realizando una división: ${calculate(5, 3, div)}`); //1.6
 
 
 // Aplicar a la función calculate la función suma
 
 
+/* la funcion de var dejo de usarse porque no tiene un dead time,
+/ lo que provoca que se contamine la ventana global o el window 
